@@ -1,0 +1,38 @@
+{
+  "name" : "Test Catalog",
+  "apis" : [
+    {
+      "id" : "E2E-Test",
+      "icon" : "https://www.scheer-group.com/Scheer/uploads/sites/4/2016/09/e2e_bridge_logo_star_mit_verlauf_ohne_claim.png",
+      "endpoint" : "http://e2ebridge.ch",
+      "endpointType" : "rest",
+      "name" : "E2E-Test",
+      "description" : "Test Catalog",
+      "definitionUrl" : "http://petstore.swagger.io/v2/swagger.json",
+      "definitionType" : "SwaggerJSON",
+      "tags" : [ "video", "mobile" ]
+    },
+	{
+      "id" : "E2E-Test2",
+      "icon" : "https://www.scheer-group.com/Scheer/uploads/sites/4/2016/09/e2e_bridge_logo_star_mit_verlauf_ohne_claim.png",
+      "endpoint" : "http://e2ebridge.com",
+      "endpointType" : "rest",
+      "name" : "E2E-Test",
+      "description" : "Test Catalog",
+      "definitionUrl" : "http://petstore.swagger.io/v2/swagger.yaml",
+      "definitionType" : "SwaggerYAML",
+      "tags" : [ "video", "mobile" ]
+    },
+	{
+      "id" : "youtube-api",
+      "icon" : "youtube",
+      "endpoint" : "http://gdata.youtube.com/feeds/",
+      "endpointType" : "rest",
+      "name" : "YouTube API",
+      "description" : "The Data API allows users to integrate their program with YouTube and allow it to perform many of the operations available on the website.",
+      "definitionUrl" : "https://developers.google.com/youtube/",
+      "definitionType" : "External",
+      "tags" : [ "video", "media" ]
+    },
+  ]
+}
