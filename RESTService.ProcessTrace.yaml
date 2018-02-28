@@ -1,0 +1,251 @@
+basePath: /rest/trace/api
+consumes:
+- application/json
+- text/xml
+definitions:
+  Event:
+    properties:
+      event:
+        type: string
+  Choice:
+    properties:
+      gateway:
+        type: string
+      choice:
+        type: string
+  Value:
+    properties:
+      key:
+        type: string
+      stringValue:
+        type: string
+      floatValue:
+        type: string
+      dateTimeValue:
+        type: string
+  ProcessTraceError:
+    properties:
+      message:
+        type: string
+info:
+  description: Interface to E2E Process Trace
+  title: ProcessTrace
+  version: 1.0.0
+paths:
+  /process/{processName}/{processId}/start:
+    post:
+      description: trace the start of a new process instance
+      parameters:
+      - description: the name of the process
+        in: path
+        name: processName
+        required: true
+        type: string
+      - description: the id of the process instance
+        in: path
+        name: processId
+        required: true
+        type: string
+      - description: a structure defining the name of the start event
+        in: body
+        name: startEvent
+        required: true
+        schema:
+          $ref: '#/definitions/Event'
+      responses:
+        '204':
+          description: ''
+        default:
+          description: this is the default return message in case of errors
+          schema:
+            $ref: '#/definitions/ProcessTraceError'
+      summary: trace the start of a new process instance
+      tags:
+      - Process Flow
+  /process/{processName}/{processId}/state/{stateName}/start:
+    post:
+      description: trace a state entry of a process instance
+      parameters:
+      - description: the name of the process
+        in: path
+        name: processName
+        required: true
+        type: string
+      - description: the id of the process instance
+        in: path
+        name: processId
+        required: true
+        type: string
+      - description: the name of the state
+        in: path
+        name: stateName
+        required: true
+        type: string
+      responses:
+        '204':
+          description: ''
+        default:
+          description: this is the default return message in case of errors
+          schema:
+            $ref: '#/definitions/ProcessTraceError'
+      summary: trace a state entry of a process instance
+      tags:
+      - Process Flow
+  /process/{processName}/{processId}/state/{stateName}/end:
+    post:
+      description: trace a state exit of a process instance
+      parameters:
+      - description: the name of the process
+        in: path
+        name: processName
+        required: true
+        type: string
+      - description: the id of the process instance
+        in: path
+        name: processId
+        required: true
+        type: string
+      - description: the name of the state
+        in: path
+        name: stateName
+        required: true
+        type: string
+      responses:
+        '204':
+          description: ''
+        default:
+          description: this is the default return message in case of errors
+          schema:
+            $ref: '#/definitions/ProcessTraceError'
+      summary: trace a state exit of a process instance
+      tags:
+      - Process Flow
+  /process/{processName}/{processId}/end:
+    post:
+      description: trace the end of a process instance
+      parameters:
+      - description: the name of the process
+        in: path
+        name: processName
+        required: true
+        type: string
+      - description: the id of the process instance
+        in: path
+        name: processId
+        required: true
+        type: string
+      - description: a structure defining the name of the end event
+        in: body
+        name: endEvent
+        required: true
+        schema:
+          $ref: '#/definitions/Event'
+      responses:
+        '204':
+          description: ''
+        default:
+          description: this is the default return message in case of errors
+          schema:
+            $ref: '#/definitions/ProcessTraceError'
+      summary: trace the end of a process instance
+      tags:
+      - Process Flow
+  /process/{processName}/{processId}/choice:
+    post:
+      description: trace a decision point in process instance's flow
+      parameters:
+      - description: the name of the process
+        in: path
+        name: processName
+        required: true
+        type: string
+      - description: the id of the process instance
+        in: path
+        name: processId
+        required: true
+        type: string
+      - description: a structure defining the choice
+        in: body
+        name: choice
+        required: true
+        schema:
+          $ref: '#/definitions/Choice'
+      responses:
+        '204':
+          description: ''
+        default:
+          description: this is the default return message in case of errors
+          schema:
+            $ref: '#/definitions/ProcessTraceError'
+      summary: trace a decision point in process instance's flow
+      tags:
+      - Process Flow
+  /process/{processName}/{processId}/value:
+    post:
+      description: trace additional information for a process instance
+      parameters:
+      - description: the name of the process
+        in: path
+        name: processName
+        required: true
+        type: string
+      - description: the id of the process instance
+        in: path
+        name: processId
+        required: true
+        type: string
+      - description: a structure defining the value to trace (only one of stringValue, floatValue, dateTimeValue must be non-null)
+        in: body
+        name: value
+        required: true
+        schema:
+          $ref: '#/definitions/Value'
+      responses:
+        '204':
+          description: ''
+        default:
+          description: this is the default return message in case of errors
+          schema:
+            $ref: '#/definitions/ProcessTraceError'
+      summary: trace additional information for a process instance
+      tags:
+      - Custom Values
+  /process/{processName}/{processId}/event:
+    post:
+      description: trace an incoming event on a process instance
+      parameters:
+      - description: the name of the process
+        in: path
+        name: processName
+        required: true
+        type: string
+      - description: the id of the process instance
+        in: path
+        name: processId
+        required: true
+        type: string
+      - description: a structure defining the name of the event
+        in: body
+        name: event
+        required: true
+        schema:
+          $ref: '#/definitions/Event'
+      responses:
+        '204':
+          description: ''
+        default:
+          description: this is the default return message in case of errors
+          schema:
+            $ref: '#/definitions/ProcessTraceError'
+      summary: trace an incoming event on a process instance
+      tags:
+      - Process Flow
+produces:
+- application/json
+- text/xml
+swagger: '2.0'
+tags:
+- description: ''
+  name: Custom Values
+- description: ''
+  name: Process Flow
