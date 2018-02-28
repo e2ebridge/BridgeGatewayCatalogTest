@@ -1,38 +1,27 @@
 {
-  "name" : "Test Catalog",
+  "name" : "E2E API Catalog",
   "apis" : [
     {
-      "id" : "E2E-Test",
+      "id" : "E2E-ProcessTraceAPI",
       "icon" : "https://www.scheer-group.com/Scheer/uploads/sites/4/2016/09/e2e_bridge_logo_star_mit_verlauf_ohne_claim.png",
-      "endpoint" : "http://e2ebridge.ch",
+      "endpoint" : "http://demo.e2ebridge.com:19118/rest/trace/api",
       "endpointType" : "rest",
-      "name" : "E2E-Test",
-      "description" : "Test Catalog",
-      "definitionUrl" : "http://petstore.swagger.io/v2/swagger.json",
-      "definitionType" : "SwaggerJSON",
-      "tags" : [ "video", "mobile" ]
-    },
-	{
-      "id" : "E2E-Test2",
-      "icon" : "https://www.scheer-group.com/Scheer/uploads/sites/4/2016/09/e2e_bridge_logo_star_mit_verlauf_ohne_claim.png",
-      "endpoint" : "http://e2ebridge.com",
-      "endpointType" : "rest",
-      "name" : "E2E-Test",
-      "description" : "Test Catalog",
-      "definitionUrl" : "http://petstore.swagger.io/v2/swagger.yaml",
+      "name" : "E2E-ProcessTraceAPI",
+      "description" : "Trace your process instances to analyse it in the Process Dashboard.",
+      "definitionUrl" : "https://demo.e2ebridge.com/rest/trace/e2e.rest.descriptors/RESTService.ProcessTrace.yaml",
       "definitionType" : "SwaggerYAML",
-      "tags" : [ "video", "mobile" ]
+      "tags" : [ "E2E" ]
     },
 	{
-      "id" : "youtube-api",
-      "icon" : "youtube",
-      "endpoint" : "http://gdata.youtube.com/feeds/",
+      "id" : "Swagger-Petstore",
+      "icon" : "https://www.scheer-group.com/Scheer/uploads/sites/4/2016/09/e2e_bridge_logo_star_mit_verlauf_ohne_claim.png",
+      "endpoint" : "http://petstore.swagger.io/v2/",
       "endpointType" : "rest",
-      "name" : "YouTube API",
-      "description" : "The Data API allows users to integrate their program with YouTube and allow it to perform many of the operations available on the website.",
-      "definitionUrl" : "https://developers.google.com/youtube/",
-      "definitionType" : "External",
-      "tags" : [ "video", "media" ]
+      "name" : "Swagger Petstore API",
+      "description" : "This is a sample server Petstore server.",
+      "definitionUrl" : "https://petstore.swagger.io/v2/swagger.yaml",
+      "definitionType" : "SwaggerYAML",
+      "tags" : [ "E2E" ]
     }
   ]
 }
