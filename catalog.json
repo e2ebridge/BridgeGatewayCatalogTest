@@ -8,7 +8,7 @@
       "endpointType" : "rest",
       "name" : "E2E-ProcessTraceAPI",
       "description" : "Trace your process instances to analyse it in the Process Dashboard.",
-      "definitionUrl" : "https://demo.e2ebridge.com/rest/trace/e2e.rest.descriptors/RESTService.ProcessTrace.yaml",
+      "definitionUrl" : "https://raw.githubusercontent.com/e2ebridge/BridgeGatewayCatalogTest/master/RESTService.ProcessTrace.yaml",
       "definitionType" : "SwaggerYAML",
       "tags" : [ "E2E" ]
     },
@@ -19,7 +19,7 @@
       "endpointType" : "rest",
       "name" : "Swagger Petstore API",
       "description" : "This is a sample server Petstore server.",
-      "definitionUrl" : "https://petstore.swagger.io/v2/swagger.yaml",
+      "definitionUrl" : "https://raw.githubusercontent.com/e2ebridge/BridgeGatewayCatalogTest/master/petstore.yaml",
       "definitionType" : "SwaggerYAML",
       "tags" : [ "E2E" ]
     }
